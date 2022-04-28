@@ -8,7 +8,9 @@ const port = (process.env.port || 3000)
 
 const app = express();
 
-const user = new Usuario(
+app.use(express.json());
+
+/*const user = new Usuario(
     { 
         nombre: 'Maria',
         correo: 'Maria@gmail.com',
@@ -17,7 +19,7 @@ const user = new Usuario(
         imagen: 'prueba'
     }
 );
-user.save();
+user.save();*/
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
